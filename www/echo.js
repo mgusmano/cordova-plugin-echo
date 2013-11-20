@@ -13,11 +13,26 @@
 var cordova = require('cordova'),
     exec = require('cordova/exec');
 
-function handlers() {
-
+alert('in3');
+    
 var Echo = function() {
     this.echo = 'hi';
-    // Create new event handlers on the window (returns a channel instance)
+    
+    this.createEcho = function(valToEcho, successCallback, errorCallback) {
+        alert('in createEcho ' + valToEcho);
+        cordova.exec(
+            successCallback, 
+            errorCallback, 
+            'Echo', 
+            'echo', 
+            [
+                {                  
+                    "theVal": valToEcho
+                }
+            ]
+        ); 
+     };   
+    
 };
 
 var echo = new Echo();

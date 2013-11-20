@@ -31,8 +31,11 @@ public class Echo extends CordovaPlugin {
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("echo")) {
+            JSONObject arg_object = args.getJSONObject(0);
+            //arg_object.getString("title")
             JSONObject r = new JSONObject();
-            r.put("test", "test");
+            r.put("test", arg_object.getString("theVal"));
+            r.put("test2", "hello");
             callbackContext.success(r);
         }
         else {
