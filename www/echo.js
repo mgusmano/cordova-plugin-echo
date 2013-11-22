@@ -1,3 +1,8 @@
+        //alert(window.echo.echo);
+        //var success = function(r) { alert(JSON.stringify(r)); };
+        //var error = function(message) { alert("Oopsie! " + message); };
+        //window.echo.createEcho('hello', success, error);
+
 var cordova = require('cordova'),
     exec = require('cordova/exec');
 
